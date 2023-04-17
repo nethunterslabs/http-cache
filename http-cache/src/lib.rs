@@ -23,6 +23,8 @@
 //! a high-performance disk cache, backend manager.
 //! - `manager-moka` (disabled): enable [moka](https://github.com/moka-rs/moka),
 //! a high-performance in-memory cache, backend manager.
+//! - `manager-sqlite` (disabled): enable [rusqlite](https://github.com/rusqlite/rusqlite),
+//! a SQLite based cache, backend manager.
 //! - `with-http-types` (disabled): enable [http-types](https://github.com/http-rs/http-types)
 //! type conversion support
 mod error;
@@ -49,6 +51,9 @@ pub use managers::moka::MokaManager;
 #[cfg(feature = "manager-moka")]
 #[cfg_attr(docsrs, doc(cfg(feature = "manager-moka")))]
 pub use moka::future::{Cache as MokaCache, CacheBuilder as MokaCacheBuilder};
+
+#[cfg(feature = "manager-sqlite")]
+pub use managers::sqlite::SqliteManager;
 
 // Custom headers used to indicate cache status (hit or miss)
 /// `x-cache` header: Value will be HIT if the response was served from cache, MISS if not

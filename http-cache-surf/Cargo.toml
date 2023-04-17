@@ -37,6 +37,7 @@ async-std = { version = "1.12.0", features = ["attributes"] }
 default = ["manager-cacache"]
 manager-cacache = ["http-cache/manager-cacache"]
 manager-moka = ["http-cache/manager-moka"]
+manager-sqlite = ["http-cache/manager-sqlite"]
 
 [package.metadata.docs.rs]
 all-features = true

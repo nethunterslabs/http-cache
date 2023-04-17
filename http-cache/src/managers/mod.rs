@@ -3,3 +3,6 @@ pub mod cacache;
 
 #[cfg(feature = "manager-moka")]
 pub mod moka;
+
+#[cfg(feature = "manager-sqlite")]
+pub mod sqlite;

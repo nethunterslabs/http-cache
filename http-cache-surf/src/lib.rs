@@ -53,6 +53,10 @@ pub use http_cache::CACacheManager;
 #[cfg_attr(docsrs, doc(cfg(feature = "manager-moka")))]
 pub use http_cache::{MokaCache, MokaCacheBuilder, MokaManager};
 
+#[cfg(feature = "manager-sqlite")]
+#[cfg_attr(docsrs, doc(cfg(feature = "manager-sqlite")))]
+pub use http_cache::SqliteManager;
+
 /// Wrapper for [`HttpCache`]
 #[derive(Debug)]
 pub struct Cache<T: CacheManager>(pub HttpCache<T>);
